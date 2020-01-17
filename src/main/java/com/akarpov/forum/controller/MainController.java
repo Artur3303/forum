@@ -21,11 +21,10 @@ public class MainController {
         this.topicService = topicService;
     }
 
-    @GetMapping({"/", "/topics"})
+    @GetMapping("/topics")
     public String getTopicsPage(Model model) {
         LOGGER.info("HTTP method GET (topics page) has been called");
         List<Topic> topicList = topicService.findAll();
-        LOGGER.debug("Returned topic list size: {}", topicList.size());
         model.addAttribute("topics", topicList);
         return "topics";
     }
