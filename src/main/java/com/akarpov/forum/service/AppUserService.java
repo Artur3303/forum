@@ -1,6 +1,11 @@
 package com.akarpov.forum.service;
 
-import org.springframework.security.core.userdetails.UserDetailsService;
+import com.akarpov.forum.dto.UserDto;
+import com.akarpov.forum.entity.AppUser;
 
-public interface AppUserService extends UserDetailsService {
+public interface AppUserService {
+
+    boolean isUsernameExists(String username);
+
+    AppUser createUser(UserDto userDto);
 }
