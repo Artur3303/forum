@@ -11,7 +11,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -24,11 +23,6 @@ class TopicServiceTests {
 
     @MockBean
     private TopicRepository topicRepository;
-
-    @Test
-    public void contextLoads() {
-        assertThat(topicService).isNotNull();
-    }
 
     @Test
     public void findAllShouldReturnTopicList() {
