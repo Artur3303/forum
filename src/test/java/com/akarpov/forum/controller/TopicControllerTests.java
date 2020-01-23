@@ -1,6 +1,5 @@
 package com.akarpov.forum.controller;
 
-import com.akarpov.forum.service.AppUserService;
 import com.akarpov.forum.service.TopicService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +7,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.mock.mockito.MockBeans;
 import org.springframework.http.MediaType;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -23,7 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @WebMvcTest({TopicController.class})
 @MockBeans({
-        @MockBean(AppUserService.class)
+        @MockBean(UserDetailsService.class)
 })
 class TopicControllerTests {
 
